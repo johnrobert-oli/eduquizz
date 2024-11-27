@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'PixelFont';
+  src: url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+}
+
+.pixel-font {
+  font-family: 'Press Start 2P', cursive;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+}
+
+.pixel-border {
+  border: 4px solid #000;
+  box-shadow: 
+    4px 4px 0 rgba(0, 0, 0, 0.2),
+    -4px -4px 0 rgba(255, 255, 255, 0.2);
+  image-rendering: pixelated;
+}
+
+.pixel-button {
+  position: relative;
+  border: 3px solid #000;
+  image-rendering: pixelated;
+  transition: all 0.1s ease;
+}
+
+.pixel-button:active {
+  transform: translate(2px, 2px);
+}
+
+.cloud {
+  position: absolute;
+  width: 60px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  animation: float 20s linear infinite;
+  image-rendering: pixelated;
+}
+
+@keyframes float {
+  from {
+    transform: translateX(-100px);
+  }
+  to {
+    transform: translateX(calc(100vw + 100px));
+  }
+}
+
+.pixel-ground {
+  height: 16px;
+  background: repeating-linear-gradient(
+    to right,
+    #4a5568 0px,
+    #4a5568 16px,
+    #2d3748 16px,
+    #2d3748 32px
+  );
+  image-rendering: pixelated;
+}
+
+.pixel-trophy {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 32px;
+  background: #ffd700;
+  clip-path: polygon(
+    50% 0%,
+    80% 20%,
+    100% 40%,
+    100% 60%,
+    80% 80%,
+    20% 80%,
+    0% 60%,
+    0% 40%,
+    20% 20%
+  );
+  image-rendering: pixelated;
+}
